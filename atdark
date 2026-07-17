@@ -1,0 +1,127 @@
+/* Authelia-inspired dark theme for FolderView Plus
+   Keeps the working selector structure from m3.dashboard.css
+   Visual direction: dark blue-gray surfaces, muted slate text, restrained blue accent */
+
+:root {
+  /* Status roles */
+  --fvplus-status-started: #3b82f6;
+  --fvplus-status-paused:  #64748b;
+  --fvplus-status-stopped: #ef4444;
+
+  /* Graph accents */
+  --fvplus-graph-cpu:      #60a5fa;
+  --fvplus-graph-mem:      #93c5fd;
+
+  /* Core surfaces */
+  --fvplus-surface-tint:   #0f172a;
+  --fvplus-hover-bg:       #1e293b;
+  --fvplus-border:         #334155;
+
+  /* Folder aliases */
+  --fvplus-folder-status-started: #3b82f6;
+  --fvplus-folder-status-paused:  #64748b;
+  --fvplus-folder-status-stopped: #ef4444;
+
+  /* Extended tokens */
+  --fvplus-bg:             #0b1220;
+  --fvplus-panel:          #111827;
+  --fvplus-panel-2:        #162033;
+  --fvplus-text:           #e5e7eb;
+  --fvplus-text-muted:     #94a3b8;
+  --fvplus-text-soft:      #64748b;
+  --fvplus-accent:         #3b82f6;
+  --fvplus-accent-hover:   #60a5fa;
+  --fvplus-accent-contrast:#eff6ff;
+}
+
+/* Global background and foreground */
+body {
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 28%),
+    linear-gradient(180deg, #0f172a 0%, #0b1220 100%) !important;
+  color: var(--fvplus-text) !important;
+}
+
+/* Primary working selectors from the original theme */
+td.ct-name.folder-name,
+td.updatecolumn.folder-update,
+div.folder-preview {
+  background-color: var(--fvplus-surface-tint) !important;
+  color: var(--fvplus-text) !important;
+  border: 1px solid var(--fvplus-border) !important;
+  box-shadow: none !important;
+}
+
+/* Secondary text / metadata */
+div.folder-name-sub,
+span.state.folder-state {
+  color: var(--fvplus-text-muted) !important;
+}
+
+/* Hover / focus behavior */
+tr:hover td.ct-name.folder-name,
+tr:hover td.updatecolumn.folder-update,
+div.folder-preview:hover {
+  background-color: var(--fvplus-hover-bg) !important;
+  border-color: var(--fvplus-accent) !important;
+}
+
+/* Graph accent usage */
+.preview-outbox .graph-cpu {
+  color: var(--fvplus-graph-cpu) !important;
+}
+
+.preview-outbox .graph-mem {
+  color: var(--fvplus-graph-mem) !important;
+}
+
+/* Buttons / dropdowns */
+button.dropDown-open.folder-dropdown {
+  background-color: var(--fvplus-accent) !important;
+  color: var(--fvplus-accent-contrast) !important;
+  border: 1px solid var(--fvplus-accent-hover) !important;
+}
+
+button.dropDown-open.folder-dropdown:hover {
+  background-color: var(--fvplus-accent-hover) !important;
+}
+
+button.dropDown-closed.folder-dropdown {
+  background-color: var(--fvplus-panel-2) !important;
+  color: var(--fvplus-text) !important;
+  border: 1px solid var(--fvplus-border) !important;
+}
+
+button.dropDown-closed.folder-dropdown:hover {
+  background-color: var(--fvplus-hover-bg) !important;
+  border-color: var(--fvplus-accent) !important;
+}
+
+/* Tooltip surfaces */
+.tooltipster-docker-folder {
+  background-color: var(--fvplus-panel) !important;
+  color: var(--fvplus-text) !important;
+  border: 1px solid var(--fvplus-border) !important;
+}
+
+/* Additional common UI coverage for a more Authelia-like dark portal */
+.panel,
+.box,
+.widget,
+.preview-outbox,
+.modal-content,
+.card {
+  background-color: var(--fvplus-panel) !important;
+  color: var(--fvplus-text) !important;
+  border: 1px solid var(--fvplus-border) !important;
+}
+
+a,
+.folder-link,
+.folder-name a {
+  color: var(--fvplus-accent) !important;
+}
+
+a:hover,
+.folder-link:hover,
+.folder-name a:hover {
