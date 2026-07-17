@@ -1,0 +1,100 @@
+/* Material 3 inspired DARK theme for FolderView Plus */
+
+/* Core M3-style roles mapped to FV+ tokens */
+:root {
+  /* Accent roles – keep similar to light theme for brand consistency */
+  --fvplus-status-started: #BAC3FF;      /* Primary tone for dark: lighter indigo */
+  --fvplus-status-paused:  #C3C6DD;      /* Secondary: soft cool neutral */
+  --fvplus-status-stopped: #FFB4AB;      /* Error tone adapted for dark */
+
+  /* Graphs as tertiary accent */
+  --fvplus-graph-cpu:      #E3BADB;      /* Tertiary: soft purple-pink for graphs */
+  --fvplus-graph-mem:      #BAC3FF;      /* Primary-like accent for mem */
+
+  /* Neutral surfaces & outlines (M3 dark surface / surface-variant / outline) */
+  --fvplus-surface-tint:   #111318;      /* Dark surface background */
+  --fvplus-hover-bg:       #22242A;      /* Slightly lighter surface for hover */
+  --fvplus-border:         #44474F;      /* Outline / separators */
+
+  /* Optional per-folder overrides */
+  --fvplus-folder-status-started: #BAC3FF;
+  --fvplus-folder-status-paused:  #C3C6DD;
+  --fvplus-folder-status-stopped: #FFB4AB;
+}
+
+/* Base surfaces and primary text ("on-surface") */
+body,
+td.ct-name.folder-name,
+td.updatecolumn.folder-update,
+div.folder-preview {
+  background-color: var(--fvplus-surface-tint);
+  color: #E2E2E9; /* On Surface: light neutral for text */
+}
+
+/* Secondary text / metadata ("on surface variant") */
+div.folder-name-sub,
+span.state.folder-state,
+.action-info,
+.info-ct {
+  color: #C4C6D0; /* Softer neutral for less prominent text */
+}
+
+/* Hover / focus behavior in dark mode */
+tr:hover td.ct-name.folder-name,
+div.folder-preview:hover {
+  background-color: var(--fvplus-hover-bg);
+  border-color: var(--fvplus-border);
+}
+
+/* Images / previews – keep subtle borders to separate from dark background */
+div.folder-preview img.img.folder-img {
+  border-radius: 4px;
+  border: 1px solid var(--fvplus-border);
+}
+
+/* Graph accent usage */
+.preview-outbox .graph-cpu {
+  color: var(--fvplus-graph-cpu);
+}
+
+.preview-outbox .graph-mem {
+  color: var(--fvplus-graph-mem);
+}
+
+/* Buttons / dropdowns using primary/secondary accents */
+button.dropDown-open.folder-dropdown {
+  background-color: #2539B8;  /* Dark primary container */
+  color: #DDE1FF;             /* On Primary Container */
+  border: 1px solid var(--fvplus-border);
+}
+
+button.dropDown-closed.folder-dropdown {
+  background-color: #434859;  /* Secondary container tone */
+  color: #C3C6DD;             /* On Secondary */
+}
+
+/* Tooltip surfaces – slightly lifted dark surface */
+.tooltipster-docker-folder {
+  background-color: #22242A;  /* Hover surface */
+  color: #E2E2E9;
+  border: 1px solid var(--fvplus-border);
+}
+
+/* State badges / text aligned to accents */
+span.state.folder-state.started {
+  color: var(--fvplus-status-started);
+}
+
+span.state.folder-state.paused {
+  color: var(--fvplus-status-paused);
+}
+
+span.state.folder-state.stopped {
+  color: var(--fvplus-status-stopped);
+}
+
+/* Legacy graph aliases kept in sync */
+:root {
+  --folder-view3-graph-cpu: var(--fvplus-graph-cpu);
+  --folder-view3-graph-mem: var(--fvplus-graph-mem);
+}
