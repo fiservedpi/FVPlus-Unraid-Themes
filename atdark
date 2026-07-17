@@ -1,7 +1,3 @@
-/* Authelia-inspired dark theme for FolderView Plus
-   Keeps the working selector structure from m3.dashboard.css
-   Visual direction: dark blue-gray surfaces, muted slate text, restrained blue accent */
-
 :root {
   /* Status roles */
   --fvplus-status-started: #3b82f6;
