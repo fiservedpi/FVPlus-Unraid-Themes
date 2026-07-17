@@ -1,0 +1,200 @@
+/* Aesthetic dark theme for FolderView Plus
+   Crisp dark surfaces, cool blue structure, restrained pops of cyan/amber/red */
+
+:root {
+  /* Functional states */
+  --fvplus-status-started: #3b82f6;
+  --fvplus-status-paused:  #f59e0b;
+  --fvplus-status-stopped: #ef4444;
+
+  /* Graph accents */
+  --fvplus-graph-cpu:      #38bdf8;
+  --fvplus-graph-mem:      #8b5cf6;
+
+  /* Core surfaces */
+  --fvplus-surface-tint:   #111827;
+  --fvplus-hover-bg:       #1f2937;
+  --fvplus-border:         #2f3d52;
+
+  /* Folder aliases */
+  --fvplus-folder-status-started: #3b82f6;
+  --fvplus-folder-status-paused:  #f59e0b;
+  --fvplus-folder-status-stopped: #ef4444;
+
+  /* Extended tokens */
+  --fvplus-bg:             #0b1020;
+  --fvplus-bg-top:         #0f172a;
+  --fvplus-panel:          #111827;
+  --fvplus-panel-2:        #172033;
+  --fvplus-panel-3:        #1d2940;
+  --fvplus-text:           #e5ecf5;
+  --fvplus-text-muted:     #9aa9bd;
+  --fvplus-text-soft:      #6b7b91;
+  --fvplus-accent:         #60a5fa;
+  --fvplus-accent-strong:  #3b82f6;
+  --fvplus-accent-cyan:    #22d3ee;
+  --fvplus-accent-purple:  #8b5cf6;
+  --fvplus-accent-amber:   #f59e0b;
+  --fvplus-accent-red:     #ef4444;
+  --fvplus-accent-contrast:#f8fbff;
+}
+
+/* Global background */
+body {
+  background:
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.10), transparent 22%),
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.10), transparent 28%),
+    linear-gradient(180deg, var(--fvplus-bg-top) 0%, var(--fvplus-bg) 100%) !important;
+  color: var(--fvplus-text) !important;
+}
+
+/* Primary layout surfaces */
+td.ct-name.folder-name,
+td.updatecolumn.folder-update,
+div.folder-preview {
+  background-color: var(--fvplus-panel) !important;
+  color: var(--fvplus-text) !important;
+  border: 1px solid var(--fvplus-border) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+/* Secondary text / metadata */
+div.folder-name-sub,
+span.state.folder-state {
+  color: var(--fvplus-text-muted) !important;
+}
+
+/* Row and preview hover */
+tr:hover td.ct-name.folder-name,
+tr:hover td.updatecolumn.folder-update,
+div.folder-preview:hover {
+  background-color: var(--fvplus-panel-3) !important;
+  border-color: var(--fvplus-accent) !important;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+/* Make names and important labels pop */
+a,
+.folder-link,
+.folder-name a,
+td.ct-name.folder-name strong {
+  color: var(--fvplus-accent) !important;
+}
+
+a:hover,
+.folder-link:hover,
+.folder-name a:hover,
+td.ct-name.folder-name strong:hover {
+  color: var(--fvplus-accent-cyan) !important;
+}
+
+/* Graph color pops */
+.preview-outbox .graph-cpu {
+  color: var(--fvplus-graph-cpu) !important;
+}
+
+.preview-outbox .graph-mem {
+  color: var(--fvplus-graph-mem) !important;
+}
+
+/* Buttons / dropdowns */
+button.dropDown-open.folder-dropdown,
+button.btn-primary,
+button[type="submit"] {
+  background: linear-gradient(180deg, var(--fvplus-accent) 0%, var(--fvplus-accent-strong) 100%) !important;
+  color: var(--fvplus-accent-contrast) !important;
+  border: 1px solid #7db7fb !important;
+  border-radius: 10px !important;
+  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.12), 0 8px 20px rgba(2, 8, 23, 0.25) !important;
+}
+
+button.dropDown-open.folder-dropdown:hover,
+button.btn-primary:hover,
+button[type="submit"]:hover {
+  background: linear-gradient(180deg, #7cb8ff 0%, #4b8ef7 100%) !important;
+}
+
+button.dropDown-closed.folder-dropdown,
+button.btn-secondary,
+button:not(.dropDown-open):not(.btn-primary):not([type="submit"]) {
+  background-color: var(--fvplus-panel-2) !important;
+  color: var(--fvplus-text) !important;
+  border: 1px solid var(--fvplus-border) !important;
+  border-radius: 10px !important;
+}
+
+button.dropDown-closed.folder-dropdown:hover,
+button.btn-secondary:hover,
+button:not(.dropDown-open):not(.btn-primary):not([type="submit"]):hover {
+  background-color: var(--fvplus-panel-3) !important;
+  border-color: var(--fvplus-accent) !important;
+}
+
+/* Tooltips and floating cards */
+.tooltipster-docker-folder,
+.panel,
+.box,
+.widget,
+.preview-outbox,
+.modal-content,
+.card {
+  background-color: var(--fvplus-panel) !important;
+  color: var(--fvplus-text) !important;
+  border: 1px solid var(--fvplus-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 30px rgba(2, 8, 23, 0.28) !important;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  background-color: var(--fvplus-panel-2) !important;
+  color: var(--fvplus-text) !important;
+  border: 1px solid var(--fvplus-border) !important;
+  border-radius: 10px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: var(--fvplus-accent-cyan) !important;
+  box-shadow: 0 0 0 1px var(--fvplus-accent-cyan) !important;
+}
+
+/* Status colors */
+.started,
+.running,
+.status-started {
+  color: var(--fvplus-status-started) !important;
+}
+
+.paused,
+.status-paused {
+  color: var(--fvplus-status-paused) !important;
+}
+
+.stopped,
+.status-stopped,
+.error {
+  color: var(--fvplus-status-stopped) !important;
+}
+
+/* Subtle separators/headings if reused */
+hr,
+.separator,
+.divider {
+  border-color: var(--fvplus-border) !important;
+}
+
+h1, h2, h3, h4, .title {
+  color: #f3f7fc !important;
+}
+
+/* Legacy graph aliases */
+:root {
+  --folder-view3-graph-cpu: var(--fvplus-graph-cpu);
+  --folder-view3-graph-mem: var(--fvplus-graph-mem);
+}
